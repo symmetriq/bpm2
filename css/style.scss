@@ -1,0 +1,167 @@
+
+// SASS Modules
+@import 'colors';
+@import 'mixins';
+@import 'normalize';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bgLight3;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  overflow: hidden;
+  @include noSelect;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.instructions {
+  padding: 10px;
+  color: $textLight3;
+}
+
+.notes {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 280px;
+  color: $textLight4;
+}
+
+ul {
+  margin-top: 15px;
+  padding-left: 18px;
+}
+
+.palette {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 200px;
+  height: 174px;
+  border: 1px solid $borderDark1;
+  background-color: $bgLight2;
+  text-align: center;
+  cursor: default;
+  @include boxShadow(0 1px 8px black(0.3));
+  @include noSelect;
+  @include roundedTop(7px);
+  @include roundedBottom(4px);
+
+  .header {
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid $borderDark2;
+    background: -webkit-linear-gradient(bottom, $bgMedium, $bgLight2 100%);
+    color: $textMedium;
+    text-shadow: 0 1px 0 white(0.6);
+    line-height: 26px;
+    @include roundedTop(7px);
+  }
+
+  .body {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+  }
+}
+
+.display {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  border: 1px solid $lcdBorder;
+  background: -webkit-linear-gradient(top, $lcdDark, $lcdMedium 100%);
+  color: $lcdText;
+  text-align: right;
+  padding-right: 60px;
+  @include boxShadow(inset 0 3px 20px transparentize($lcdBright, 0.5));
+  @include roundedCorners(4px);
+
+  &.noValue span { opacity: 0.5; }
+
+  .value {
+    text-shadow: 0 0 3px $lcdTextGlow;
+    font-size: 30px;
+    font-family: Courier, fixed-width;
+    line-height: 36px;
+  }
+
+  .units {
+    position: absolute;
+    right: 15px;
+    display: inline-block;
+    text-shadow: 0 0 1px $lcdTextGlow;
+    font-size: 14px;
+    line-height: 38px;
+  }
+}
+
+.accuracyMeter {
+  position: relative;
+  margin: 10px auto;
+  width: 100%;
+  height: 12px;
+  border: 1px solid $borderDark1;
+  background-color: $bgLight1;
+  color: $textLabel;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 10px;
+  @include boxShadow(inset 0 0 1px black(0.25));
+  @include roundedCorners(2px);
+
+  .label {
+    position: relative;
+    z-index: 0;
+    color: $textLight1;
+  }
+}
+
+.accuracyBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 10px;
+  opacity: 0.6;
+  width: 0;
+  @include roundedCorners(1px);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid $buttonBorder;
+  background: -webkit-linear-gradient(top, $buttonUpTop, $buttonUpBottom 100%);
+  color: $buttonUpText;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 white(0.25);
+  font-weight: bold;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  @include noSelect;
+  @include roundedCorners(4px);
+  @include boxShadow(inset 0 -1px 2px $buttonUpBottomEdge, inset 0 1px 0 $buttonUpTopEdge, 0 1px 1px black(0.2));
+
+  &:active {
+    background: -webkit-linear-gradient(top, $buttonDownTop, $buttonDownBottom 100%);
+    color: $buttonDownText;
+    @include boxShadow(inset 0 -1px 2px $buttonDownBottomEdge, inset 0 1px 0 $buttonDownTopEdge);
+  }
+}

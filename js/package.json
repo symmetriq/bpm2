@@ -1,0 +1,14 @@
+{
+  "name": "BPM2"
+, "description": "BPM Calculator 2"
+, "version": "1.0.0"
+, "author": "Jason Sims"
+, "dependencies": {
+    "backbone": "*"
+  , "bean": "*"
+  , "bonzo": "*"
+  , "domready": "*"
+  , "drag": "*"
+  , "qwery": "*"
+  }
+}

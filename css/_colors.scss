@@ -1,0 +1,74 @@
+
+// ----- Base Colors -----
+
+// These should only be assigned to other variables, not in actual CSS rules
+// (The variables used in actual CSS should describe their *role*, not the color itself)
+
+$gray1:           #111;
+$gray2:           #222;
+$gray3:           #333;
+$gray4:           #555;
+$gray5:           #666;
+$gray6:           #7F7F7F;
+$gray7:           #999;
+$gray8:           #ADADAD;
+$gray9:           #BBB;
+$gray10:          #CDCDCD;
+$gray11:          #D8D8D8;
+$gray12:          #E4E4E4;
+$gray13:          #F5F5F5;
+$gray14:          #FAFAFA;
+
+
+// ----- Color Roles -----
+
+$textDark1:           $gray2;
+$textDark2:           $gray1;
+$textLabel:           $gray7;
+$textLight1:          $gray4;
+$textLight2:          $gray5;
+$textLight3:          $gray6;
+$textLight4:          $gray8;
+$textMedium:          $gray3;
+
+$bgDark1:             $gray9;
+$bgDark2:             $gray5;
+$bgDefault:           white;
+$bgLight1:            $gray12;
+$bgLight2:            $gray13;
+$bgLight3:            $gray14;
+$bgMedium:            $gray10;
+
+$borderDark1:         $gray9;
+$borderDark2:         $gray8;
+$borderDark3:         $gray7;
+$borderFrame:         $gray7;
+$borderLight1:        $gray11;
+$borderLight2:        $gray12;
+$borderLight3:        white;
+$borderMedium:        $gray10;
+
+// ----- LCD Display -----
+
+// (seems redundant to define root colors for some of these, so some are just specified here)
+$lcdDark:             #030;
+$lcdMedium:           #060;
+$lcdMidBright:        #0B0;
+$lcdBright:           #0F0;
+$lcdBorder:           $lcdDark;
+$lcdText:             $lcdBright;
+$lcdTextGlow:         $lcdMidBright;
+
+// ----- Tap Tempo Button -----
+
+$buttonBorder:          hsl(210,15%,40%);
+$buttonUpTop:           hsl(210,50%,80%);
+$buttonUpBottom:        hsl(210,35%,62%);
+$buttonUpTopEdge:       hsl(210,75%,90%);
+$buttonUpBottomEdge:    hsl(210,45%,60%);
+$buttonDownTop:         hsl(210,50%,70%);
+$buttonDownBottom:      hsl(210,35%,55%);
+$buttonDownTopEdge:     hsl(210,50%,60%);
+$buttonDownBottomEdge:  hsl(210,47%,52%);
+$buttonUpText:          hsl(210,15%,15%);
+$buttonDownText:        hsl(210,15%,10%);

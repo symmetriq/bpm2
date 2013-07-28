@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>BPM Calculator 2</title>
+  <script src="js/ender.min.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+
+<div id="main">
+
+  <div class="instructions">Click "Tap Tempo" or just press spacebar.<br>The window is draggable (click anywhere outside of the button).</div>
+
+  <div class="notes">TODO:
+    <ul>
+      <li>Look at BPM Graph and see how it measures accuracy (not sure if it does, actually)</li>
+      <li>Ignore outliers (beyond some threshold)</li>
+      <li>Make the outline of the display pulse at the displayed tempo</li>
+      <li>Flash the button when pressing spacebar</li>
+    </ul>
+  </div>
+
+</div>
+
+<script type="text/template" id="bpmPalette">
+  <div id="bpmCalculator" class="palette">
+    <div class="header">BPM Calculator</div>
+    <div class="body">
+      <div id="bpmDisplay" class="display noValue"><span id="bpmValue" class="value"><%= bpm %></span><span class="units">bpm</span></div>
+      <div class="accuracyMeter">
+        <div id="accuracy" class="accuracyBar"></div>
+        <div class="label">Accuracy</div>
+      </div>
+      <button id="tapButton">Tap Tempo</button>
+    </div>
+  </div>
+</script>
+
+</body>
+</html>
+

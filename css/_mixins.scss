@@ -1,0 +1,71 @@
+// ----- Mixins -----
+
+// Layout
+@mixin boxSizing($type) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+@mixin borderBox { @include boxSizing(border-box) }
+@mixin contentBox { @include boxSizing(content-box) }
+
+// Prevent selection of UI elements
+@mixin noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none;
+}
+
+// Rounded Corners
+@mixin roundedCorners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+// The radius for each corner is specified explicitly, so it's possible to combine roundedTop and roundedBottom (with different values for each)
+@mixin roundedTop($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin roundedBottom($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+// Box Shadows
+@mixin boxShadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// Retina Media Query
+@mixin retina() {
+  @media screen and (-webkit-min-device-pixel-ratio: 2) { @content }
+}
+
+// ----- Functions -----
+
+@function pxem($pixels) {
+  @return ($pixels / $baseFontSize);
+}
+
+@function empx($ems) {
+  @return ($ems * $baseFontSize);
+}
+
+// Black & White with opacity
+@function black($opacity) {
+  @return rgba(0,0,0,$opacity);
+}
+@function white($opacity) {
+  @return rgba(255,255,255,$opacity);
+}
