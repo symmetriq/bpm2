@@ -11,16 +11,12 @@
 
 <div id="main">
 
-  <div class="instructions">Click "Tap Tempo" or just press spacebar.<br>The window is draggable (click anywhere outside of the button).</div>
-
-  <div class="notes">TODO:
-    <ul>
-      <li>Look at BPM Graph and see how it measures accuracy (not sure if it does, actually)</li>
-      <li>Ignore outliers (beyond some threshold)</li>
-      <li>Make the outline of the display pulse at the displayed tempo</li>
-      <li>Flash the button when pressing spacebar</li>
-    </ul>
-  </div>
+  <ul class="instructions">
+    <li>Listen to a song and click the "Tap Tempo" (or just press spacebar) on the beat to measure the tempo</li>
+    <li>The window is draggable (click anywhere outside of the button)</li>
+    <li>"Accuracy" currently just counts from 0-30 taps (this will be improved later, but 30 taps is usually enough for an accurate reading)</li>
+    <li>If more than 2.5 seconds pass between taps, a new tempo reading is started (so you can start tapping a new tempo without having to reload the page)</li>
+  </ul>
 
 </div>
 
@@ -31,7 +27,7 @@
       <div id="bpmDisplay" class="display noValue"><span id="bpmValue" class="value"><%= bpm %></span><span class="units">bpm</span></div>
       <div class="accuracyMeter">
         <div id="accuracy" class="accuracyBar"></div>
-        <div class="label">Accuracy</div>
+        <div class="accuracyBG">Accuracy</div>
       </div>
       <button id="tapButton">Tap Tempo</button>
     </div>

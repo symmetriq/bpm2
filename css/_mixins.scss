@@ -47,6 +47,16 @@
   box-shadow: $shadow;
 }
 
+// Vertical gradient
+@mixin vGradient($gradientColor1, $gradientColor2) {
+  background-image: -moz-linear-gradient(-90deg, $gradientColor1 0%, $gradientColor2 100%);
+  background-image: -webkit-linear-gradient(-90deg, $gradientColor1 0%, $gradientColor2 100%);
+//   background-image: -ms-linear-gradient(-90deg, $gradientColor1 0%, $gradientColor2 100%);
+  background-image: linear-gradient(-180deg, $gradientColor1 0%, $gradientColor2 100%);
+  // fallback for stupid IE
+  background-color: mix($gradientColor1, $gradientColor2);
+}
+
 // Retina Media Query
 @mixin retina() {
   @media screen and (-webkit-min-device-pixel-ratio: 2) { @content }
